@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useReducer, useState } from 'react';
+import { cartReducer } from './reducers/cartReducer';
+import { context } from './createContext';
+import AppRouter from './routers/AppRouter';
+import { authReducer } from './reducers/authReducer';
+import { uiReducer } from './reducers/uiReducer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const init = () => JSON.parse(localStorage.getItem('products')) || [];
+
+const App = () => {
+
+    const [state, dispatch] = useReducer(cartReducer, [], init);
+
+    const [stateAuth, dispatchAuth] = useReducer(authReducer, {});
+    const [stateUi, dispatchUi] = useReducer(uiReducer, {
+        loading: false, 
+        msgError: null,
+    });
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        localStorage.setItem('products', JSON.stringify(state));
+    }, [state])
+    
+    return (
+        <context.Provider value={{state, dispatch, stateAuth, dispatchAuth, stateUi, dispatchUi, isLoggedIn, setIsLoggedIn}}>
+             <AppRouter />
+        </context.Provider>
+    )
 }
 
 export default App;

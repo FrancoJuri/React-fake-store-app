@@ -1,0 +1,258 @@
+
+
+a{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: white;
+}
+
+.navbar-brand{
+    font-size: 22px !important;
+}
+
+.spinner-container{
+    height: calc(100vh - 120px);
+    display: grid;
+    place-content: center;
+}
+
+.spinner-container div{
+    width: 90px;
+    height: 90px;
+}
+
+.cards-container{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    transition: all 250ms !important;
+}
+
+.card{
+    box-shadow: -2px 2px 5px -4px rgba(0,0,0,0.52);
+    -webkit-box-shadow: -2px 2px 5px -4px rgba(0,0,0,0.52);
+    -moz-box-shadow: -2px 2px 5px -4px rgba(0,0,0,0.52);
+    animation: aparition forwards 400ms;
+}
+
+@keyframes aparition {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.card small{
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.card span{
+    font-weight: bold;
+}
+
+.categories .card {
+    cursor: pointer;
+}
+
+.card p{
+    font-family: 'Quicksand';
+}
+
+
+.all-products a{
+    padding: 15px;
+    color: white;
+    font-family: 'Quicksand';
+    border-radius: 6px;
+    font-size: 20px;
+    animation: aparition forwards 400ms;
+}
+
+.all-products a:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.category-cards{
+    flex-flow: row wrap;
+}
+
+footer{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    bottom: 0px;
+}
+
+footer h3{
+    font-family: 'Quicksand';
+}
+
+.product-screen-container{
+    min-height: calc(100vh - 150px - 3rem);
+    animation: aparition forwards 400ms;
+}
+
+.cart-products-container{
+    -webkit-box-shadow: 0 0 2px #d1d7dc;
+    box-shadow: 0 0 2px #d1d7dc;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 24px;
+    text-align: center;
+}
+
+.no-products-div h3{
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product-cart-card{
+    min-height: 320px;
+}
+
+.product-cart-card img{
+    height: 300px;
+    object-fit: contain;
+}
+
+.cart-screen-container{
+    min-height: calc(100vh - 13rem);
+}
+
+.actions-product-div{
+    flex-wrap: wrap;
+}
+
+.form-container{
+    min-height: calc(100vh - 36px - 4.4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+
+.social-networks{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.google-btn {
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+
+    transition: box-shadow .3s ease;
+}
+
+.google-btn:hover {
+    box-shadow: 0 0 6px #4285f4;
+}
+.google-btn:active {
+    background: #1669f2;
+}
+
+.google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+.google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+}
+.btn-text {
+    float: right;
+    margin: 11px 60px 0 0;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+.link{
+    color: #363636 !important;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.navbar-collapse{
+    justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.user-dropdown-menu{
+    min-width: 7.5rem !important;
+}
+
+@media(max-width: 991px){
+    .navbar-brand{
+        font-size: 30px !important;
+    }
+}
+
+@media(max-width: 600px){
+    .svg-container svg{
+        width: 320px;
+    } 
+}
+
+@media(max-width: 364px){
+    .svg-container svg{
+        width: 240px;
+    }
+}
+
+@media(max-width: 415px){
+    .actions-product-div{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 318px){
+    .btn-text {
+        margin: 11px 30px 0 0;
+    }
+}
