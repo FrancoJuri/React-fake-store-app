@@ -41,7 +41,7 @@ const ProductScreen = ({history}) => {
                 title: 'Error',
                 icon:'error',
                 text: 'You must be logged to add a product to cart',
-                footer: '<a href="/auth/login" class="btn btn-primary rounded">Sign in</a>'
+                footer: '<a href="/#/auth/login" class="btn btn-primary rounded">Sign in</a>'
             })
             return;
         }
@@ -64,7 +64,7 @@ const ProductScreen = ({history}) => {
             title: 'Excellent!',
             text: 'Product added successfully!',
             showConfirmButton: false,
-            footer: '<a href="/cart" class="btn btn-primary">Go to cart</a>'
+            footer: '<a href="/#/cart" class="btn btn-primary">Go to cart</a>'
         })
     }
 
