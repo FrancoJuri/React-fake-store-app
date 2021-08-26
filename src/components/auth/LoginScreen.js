@@ -20,6 +20,9 @@ const LoginScreen = () => {
     const {dispatchAuth, dispatchUi, stateUi} = useContext(context);
     const {loading, msgError} = stateUi;
 
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.click();
+    })
     
     const handleLogin = (e) => {
         e.preventDefault();
