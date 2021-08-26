@@ -1,4 +1,7 @@
-
+body{
+    padding-right: 0px !important;
+    overflow-y: auto;
+}
 
 a{
     cursor: pointer;
@@ -104,7 +107,7 @@ footer h3{
 }
 
 .product-screen-container{
-    min-height: calc(100vh - 150px - 3rem);
+    min-height: calc(100vh - 150px - 3.6rem);
     animation: aparition forwards 400ms;
 }
 

@@ -20,9 +20,6 @@ const LoginScreen = () => {
     const {dispatchAuth, dispatchUi, stateUi} = useContext(context);
     const {loading, msgError} = stateUi;
 
-    document.addEventListener('DOMContentLoaded', () => {
-        document.body.click();
-    })
     
     const handleLogin = (e) => {
         e.preventDefault();
@@ -114,6 +111,11 @@ const LoginScreen = () => {
         }
     }, [msgError, dispatchUi]);
 
+    useEffect(() => {
+        if(document.querySelector('.swal2-container')){
+            document.querySelector('.swal2-container').remove();
+        }
+    }, []);
     
     return (
         <div className='form-container'>

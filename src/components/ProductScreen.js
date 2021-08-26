@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, Router, useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import ValidatorScreens from './ValidatorScreens';
 
@@ -34,14 +34,19 @@ const ProductScreen = ({history}) => {
         }
     }
 
+    const handleLinkClick = () => {
+        document.querySelector('body').classList.remove('swal2-shown');
+        document.querySelector('body').classList.remove('swal2-height-auto');
+    }
+    
     const handleAdd = () => {
 
         if(!isLoggedIn){
-            Swal.fire({
+            MySwal.fire({
                 title: 'Error',
                 icon:'error',
                 text: 'You must be logged to add a product to cart',
-                footer: '<a href="/React-fake-store-app/#/auth/login" class="btn btn-primary rounded">Sign in</a>'
+                footer: <Router history={history}><Link to='/auth/login' className='btn btn-primary' onClick={handleLinkClick}>Sign in</Link></Router>
             })
             return;
         }
@@ -64,7 +69,7 @@ const ProductScreen = ({history}) => {
             title: 'Excellent!',
             text: 'Product added successfully!',
             showConfirmButton: false,
-            footer: '<a href="/React-fake-store-app/#/cart" class="btn btn-primary">Go to cart</a>'
+            footer: <Router history={history}><Link to='/cart' className='btn btn-primary' onClick={handleLinkClick}>Go to cart</Link></Router>
         })
     }
 

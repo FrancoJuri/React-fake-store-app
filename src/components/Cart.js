@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { context } from '../createContext';
@@ -58,6 +58,14 @@ const Cart = () => {
             payload: id,
         })
     }
+
+    useEffect(() => {
+        if(document.querySelector('.swal2-container')){
+            document.querySelector('.swal2-container').remove();
+        }
+    }, [])
+
+    
     
     return (
         <div className='mt-5'> 
