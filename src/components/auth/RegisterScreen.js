@@ -62,8 +62,7 @@ const RegisterScreen = () => {
                 payload: 'Email is not valid'
             })
             return false;
-        } 
-        if(!validator.equals(password, password2) || !validator.isStrongPassword(password, [{minLenght:5}])){
+        } else if(!validator.equals(password, password2) || !validator.isStrongPassword(password, [{minLenght:5}])){
             dispatchUi({
                 type: types.uiSetError,
                 payload: 'Password should be at least 6 characters and match each other',

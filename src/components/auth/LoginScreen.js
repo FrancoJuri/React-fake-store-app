@@ -50,6 +50,7 @@ const LoginScreen = () => {
                 })
             })
         }
+        
     }
 
     const handleGoogleLogin = () => {
